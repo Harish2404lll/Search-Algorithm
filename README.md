@@ -19,30 +19,78 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
-
-
+def linearSearch(array,n,k):
+    for i in range (0,n):
+        if(array[i]==k):
+            return i
+    return -1
+    
+array = eval(input())
+k = eval(input())
+n = len(array)
+array.sort()
+result=linearSearch(array,n,k)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
-
-
-
+def binarySearchIter(array, k, low, high):
+    while low <= high:
+        mid = low+(high-low)//2
+        if array[mid]==k:
+            return mid
+        elif array[mid]<k:
+            low=mid+1
+        else:
+            high=mid-1
+    return -1
+array=eval(input())
+array.sort()
+k=eval(input())
+result=binarySearchIter(array,k,0,len(array)-1)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
-
-
+def BinarySearch(arr, k, low, high):
+    if high>=low:
+        mid=low+(high-low)//2 
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:
+        return -1
+arr = eval(input())
+arr.sort()
+k=eval(input())
+result=BinarySearch(arr,k,0,len(arr)-1)
+if(result==-1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ",result)
 ```
 ## Sample Input and Output
 
+![Screenshot 2023-11-11 084913](https://github.com/Harish2404lll/Search-Algorithm/assets/141472096/b565a83d-625c-484c-8d79-6a41993b3bd8)
 
+![Screenshot 2023-11-11 084931](https://github.com/Harish2404lll/Search-Algorithm/assets/141472096/06bc06fa-9a46-4d24-817b-67557fd4582e)
 
+![Screenshot 2023-11-11 084943](https://github.com/Harish2404lll/Search-Algorithm/assets/141472096/6bb85c05-e939-4acb-829c-9be014f83d89)
 
 
 
